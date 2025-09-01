@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+{% block content %}
+  <h2>My Info</h2>
+  {% if items %}
+    <ul class="info-list">
+      {% for it in items %}
+        <li>
+          <strong>{{ it.full_name }}</strong> — Age: {{ it.age }} <br>
+          <small>{{ it.created_at }}</small>
+          <p>{{ it.notes }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No entries yet. <a href="/add-info/">Add one</a>.</p>
+  {% endif %}
+{% endblock %}

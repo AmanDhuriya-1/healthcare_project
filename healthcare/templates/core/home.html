@@ -1,0 +1,12 @@
+{% extends 'core/base.html' %}
+{% block content %}
+  <section class="hero">
+    <h1>Welcome to Healthcare</h1>
+    <p>Securely store and manage basic patient info.</p>
+    {% if user.is_authenticated %}
+      <p><a class="btn" href="/add-info/">Add new info</a> <a class="btn ghost" href="/my-info/">View my info</a></p>
+    {% else %}
+      <p><a class="btn" href="/signup/">Create account</a> or <a class="btn ghost" href="/login/">Login</a></p>
+    {% endif %}
+  </section>
+{% endblock %}
